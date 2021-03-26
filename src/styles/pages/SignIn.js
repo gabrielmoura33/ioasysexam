@@ -47,17 +47,6 @@ export const AnimationContainer = styled.div`
 
   animation: ${appearFromLeft} 1s;
 
-  form {
-    margin: 80px 0;
-    width: 340px;
-    img {
-      margin-bottom: 10%;
-    }
-    h1 {
-      margin-bottom: 24px;
-    }
-  }
-
   a {
     color: #f4ede8;
     display: block;
@@ -91,6 +80,18 @@ export const AnimationContainer = styled.div`
 
 export const FormBase = styled(Form)`
   position: relative;
+  margin: 80px 0;
+  width: 340px;
+  img {
+    margin-bottom: 10%;
+  }
+  h1 {
+    margin-bottom: 24px;
+  }
+
+  @media(max-width: 340px) {
+    width: 270px;
+  }
 `
 
 export const Error = styled(Tooltip)`
