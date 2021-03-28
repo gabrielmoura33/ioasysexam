@@ -3,23 +3,21 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   background: 'rgba(0, 0, 0, 0.4)';
   position: relative;
-
 `;
 
 export const CloseButton = styled.button`
-    position: absolute;
-    right: 2%;
-    top: 0%;
-    border: 0;
-    padding: 5px;
-    border-radius: 50%;
-    background: #FFF;
-    cursor: pointer;
-    z-index: 5;
-    @media(max-width: 767px) {
-      right: -30%;
-
-    }
+  position: absolute;
+  right: 2%;
+  top: 0%;
+  border: 0;
+  padding: 5px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  z-index: 5;
+  @media (max-width: 767px) {
+    right: -30%;
+  }
 `;
 
 export const Container = styled.div`
@@ -35,16 +33,16 @@ export const Container = styled.div`
       height: 100%;
     }
   }
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     gap: 2rem;
     padding: 1.5rem;
     aside {
-    img {
-      width: 50%;
-      height: 100%;
+      img {
+        width: 50%;
+        height: 100%;
+      }
     }
-  }
   }
 `;
 
@@ -52,12 +50,11 @@ export const PageBookInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     width: 100%;
     height: 50%;
     gap: 2rem;
   }
-
 `;
 export const PageBookHeader = styled.div``;
 export const Title = styled.h1`
@@ -73,10 +70,9 @@ export const Authors = styled.span`
   font-weight: normal;
   font-size: 1.2rem;
   line-height: 20px;
-  color: #AB2680;
+  color: #ab2680;
 `;
 export const PageBookBody = styled.div`
-
   font-family: Heebo;
   font-style: normal;
   font-weight: 500;
@@ -103,6 +99,5 @@ export const PageBookFooter = styled.div`
 export const PageBookQuote = styled.p`
   margin-top: 10px;
   opacity: 0.5;
-  max-width:  576px;
-
+  max-width: 576px;
 `;

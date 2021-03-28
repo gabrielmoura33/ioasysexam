@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 
 export default function SEO({
@@ -5,17 +6,21 @@ export default function SEO({
   description,
   image,
   shouldExcludeTitleSuffix = false,
-  shouldIndexPage = true,
+  shouldIndexPage = true
 }) {
-  const pageTitle = `${title} ${!shouldExcludeTitleSuffix ? '| Ioasys Books' : ''}`;
-  const pageImage = image ? `${process.env.NEXT_PUBLIC_SITE_URL}/${image}` : null;
+  const pageTitle = `${title} ${
+    !shouldExcludeTitleSuffix ? '| Ioasys Books' : ''
+  }`;
+  const pageImage = image
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}/${image}`
+    : null;
 
   return (
     <Head>
       <title>{pageTitle}</title>
 
-      { description && <meta name="description" content={description}/>}
-      { image && <meta name="image" content={image} />}
+      {description && <meta name="description" content={description} />}
+      {image && <meta name="image" content={image} />}
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="MobileOptimized" content="320" />
       <meta name="HandheldFriendly" content="True" />
@@ -44,5 +49,5 @@ export default function SEO({
       <meta name="twitter:image:width" content="1200" />
       <meta name="twitter:image:height" content="620" />
     </Head>
-  )
+  );
 }

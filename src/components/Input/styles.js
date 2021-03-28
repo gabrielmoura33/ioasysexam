@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 import Button from '../Button';
-
-
 export const Container = styled.div`
   padding: 8px 0;
   width: 100%;
@@ -10,8 +8,8 @@ export const Container = styled.div`
 `;
 
 export const InputGroup = styled.div`
-   background: rgba(0, 0, 0, 0.32);
-   padding: 8px;
+  background: rgba(0, 0, 0, 0.32);
+  padding: 8px;
   display: flex;
   flex-direction: column;
   color: #666360;
@@ -25,34 +23,34 @@ export const InputGroup = styled.div`
     font-weight: normal;
     font-size: 12px;
     line-height: 16px;
-    color: #FFF;
+    color: #fff;
     opacity: 0.5;
     margin-bottom: 2px;
     ${props =>
-    props.isErrored &&
-    css`
-      border-color: #c53030;
-    `}
+      props.isErrored &&
+      css`
+        border-color: #c53030;
+      `}
 
+    ${props =>
+      props.isFocused &&
+      css`
+        opacity: 1;
+      `}
   ${props =>
-    props.isFocused &&
-    css`
-      opacity: 1;
-    `}
-  ${props =>
-    props.isFilled &&
-    css`
-      color: #FFF;
-    `}
+      props.isFilled &&
+      css`
+        color: #fff;
+      `}
   }
   input {
-    color: #FFF;
+    color: #fff;
     height: 100%;
     background: transparent;
     flex: 1;
     border: 0;
     &::placeholder {
-      color: #FFF;
+      color: #fff;
       opacity: 0.5;
     }
   }
@@ -60,8 +58,6 @@ export const InputGroup = styled.div`
     margin-right: 16px;
   }
 `;
-
-
 
 export const SignButton = styled(Button)`
   height: 36px;

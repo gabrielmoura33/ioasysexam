@@ -1,16 +1,32 @@
 import React from 'react';
-import booksrc from '../../assets/book.png';
-import { Container, BookInfo, BookInfoTitle, Title, Author, BookInfoEditor } from './styles';
+import {
+  Container,
+  BookInfo,
+  BookInfoTitle,
+  Title,
+  Author,
+  BookInfoEditor
+} from './styles';
 
-function BookCard({imagesrc, alt, title, authors, pageCount, publisher, published, modalOpenHandle}) {
-
+function BookCard({
+  imagesrc,
+  alt,
+  title,
+  authors,
+  pageCount,
+  publisher,
+  published,
+  modalOpenHandle
+}) {
   return (
-    <Container  onClick={() => modalOpenHandle()}>
-      <img src={imagesrc} alt={alt}/>
+    <Container onClick={() => modalOpenHandle()}>
+      <img src={imagesrc} alt={alt} />
       <BookInfo>
         <BookInfoTitle>
           <Title>{title}</Title>
-          {authors?.map(a => <Author key={a}>{a}</Author>)}
+          {authors?.map(a => (
+            <Author key={a}>{a}</Author>
+          ))}
         </BookInfoTitle>
         <BookInfoEditor>
           <span>{pageCount}</span>

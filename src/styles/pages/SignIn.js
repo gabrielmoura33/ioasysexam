@@ -19,7 +19,7 @@ export const Content = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 700px;
-  @media(max-width: 670px) {
+  @media (max-width: 670px) {
     background: url(${sgnInBackgroundImg}) no-repeat center;
     background-size: cover;
   }
@@ -89,10 +89,10 @@ export const FormBase = styled(Form)`
     margin-bottom: 24px;
   }
 
-  @media(max-width: 340px) {
+  @media (max-width: 340px) {
     width: 270px;
   }
-`
+`;
 
 export const Error = styled(Tooltip)`
   height: 20px;
@@ -102,11 +102,11 @@ export const Error = styled(Tooltip)`
   top: 130%;
 
   span {
-    background: rgba(255,255,255, 0.5);
+    background: rgba(255, 255, 255, 0.5);
     color: #000;
 
     &::before {
-      border-color: #FFF transparent;
+      border-color: #fff transparent;
     }
   }
 `;
