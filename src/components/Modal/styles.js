@@ -92,6 +92,7 @@ export const PageBookBody = styled.div`
   }
 `;
 export const PageBookFooter = styled.div`
+  margin-top: 3rem;
   font-family: Heebo;
   font-style: normal;
   font-weight: 500;

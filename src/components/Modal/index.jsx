@@ -13,8 +13,7 @@ import {
   PageBookQuote
 } from './styles';
 import { RiCloseFill } from 'react-icons/ri';
-import { ImQuotesLeft } from 'react-icons/im'
-import book from '../../assets/bigbook.png';
+import { ImQuotesLeft } from 'react-icons/im';
 
 const customStyles = {
   overlay: {
@@ -37,7 +36,7 @@ const customStyles = {
   }
 };
 
-function Modal({ modalIsOpen, setModalIsOpen, product }) {
+function Modal({ modalIsOpen, setModalIsOpen, book }) {
   function closeModal() {
     setModalIsOpen(false);
   }
@@ -55,28 +54,28 @@ function Modal({ modalIsOpen, setModalIsOpen, product }) {
       >
         <Container>
           <aside>
-            <img src={book} alt="book"/>
+            <img src={book?.imageUrl} alt="book"/>
           </aside>
           <PageBookInfo>
             <PageBookHeader>
-              <Title>Change By Design Second line exampl...</Title>
-              <Authors>Tim Brown, Julie Zhuo, Fried Maximiilian</Authors>
+              <Title>{book?.title}</Title>
+              <Authors>{book?.authors.toString().replace(',' , ', ')}</Authors>
             </PageBookHeader>
             <PageBookBody>
               <span>INFORMAÇÕES</span>
-              <div><strong>Páginas</strong> <span>304 páginas</span></div>
-              <div><strong>Editora</strong> <span>Editora Loyola</span></div>
-              <div><strong>Publicação</strong> <span>2020</span></div>
-              <div><strong>Idioma</strong> <span>Inglês</span></div>
-              <div><strong>Título Original</strong> <span>Change By Design</span></div>
-              <div><strong>ISBN-10</strong> <span>0062856626</span></div>
-              <div><strong>ISBN-13</strong> <span>978-0062856623</span></div>
+              <div><strong>Páginas</strong> <span>{book?.pageCount} páginas</span></div>
+              <div><strong>Editora</strong> <span>Editora {book?.publisher}</span></div>
+              <div><strong>Publicação</strong> <span>{book?.published}</span></div>
+              <div><strong>Idioma</strong> <span>{book?.language}</span></div>
+              <div><strong>Título Original</strong> <span>{book?.title}</span></div>
+              <div><strong>ISBN-10</strong> <span>{book?.isbn10}</span></div>
+              <div><strong>ISBN-13</strong> <span>{book?.isbn13}</span></div>
             </PageBookBody>
             <PageBookFooter>
               <h1>Resenha da editora</h1>
               <PageBookQuote>
                 <ImQuotesLeft />
-                The subject of “design thinking” is the rage at business schools, throughout corporations, and increasingly in the popular press—due in large part to the work of IDEO, a leading design firm, and its celebrated CEO, Tim Brown, who uses this book to show how the techniques and strategies of design belong at every level of business.
+                {book?.description}
               </PageBookQuote>
             </PageBookFooter>
           </PageBookInfo>

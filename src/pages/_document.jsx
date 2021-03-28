@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400&display=swap" rel="stylesheet"></link>
 
-          <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico" />
+          <link rel="shortcut icon" href="/static/favicon.ico" />
         </Head>
         <body>
           <Main />

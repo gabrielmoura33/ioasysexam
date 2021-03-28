@@ -50,3 +50,23 @@ export const Logout = styled.button`
   }
 `;
 
+export const Pagination = styled.div`
+  display: flex;
+  width: 90vw;
+  align-items: center;
+  justify-content: flex-end;
+  span {
+    margin-right: 1.8rem;
+  }
+`;
+export const PaginationButton = styled.button`
+  background: transparent;
+  padding: 1.2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  margin-right: 1.2rem;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.5;
+  }
+`;
