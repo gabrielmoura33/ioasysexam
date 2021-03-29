@@ -13,6 +13,11 @@ export const Container = styled.a`
   &:hover {
     opacity: 0.7;
   }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 `;
 
 export const BookInfo = styled.div`

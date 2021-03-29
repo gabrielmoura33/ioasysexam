@@ -106,7 +106,11 @@ export default function Home({ books, user, page, totalPages, token }) {
 }
 
 export const getServerSideProps = async ({ req }) => {
-  const { IoasysBooksUser: user, IoasysBooksToken: token } = req.cookies;
+  const {
+    IoasysBooksUser: user,
+    IoasysBooksToken: token,
+    IoasysBooksRefreshToken: refreshToken
+  } = req.cookies;
   if (!user) {
     return {
       redirect: {
@@ -132,9 +136,29 @@ export const getServerSideProps = async ({ req }) => {
         token
       }
     };
-  } catch (error) {
+  } catch {
+    const { headers } = await api.post(
+      'auth/refresh-token',
+      { refreshToken },
+      {
+        headers: { authorization: `Bearer ${token}` }
+      }
+    );
+
+    const response = await api.get('/books', {
+      headers: { authorization: `Bearer ${headers.Authorization}` },
+      params: { page: 1, amount: 12 }
+    });
+
+    const { data: books, page, totalPages } = response.data;
     return {
-      props: {}
+      props: {
+        books,
+        user: JSON.parse(user),
+        page,
+        totalPages,
+        token
+      }
     };
   }
 };
