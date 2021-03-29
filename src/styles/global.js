@@ -23,8 +23,8 @@ export default createGlobalStyle`
 
 
   body {
-    background: url(${bodyBackground}) no-repeat center;
-    background-size: cover;
+    background: url(${bodyBackground}) repeat center;
+    background-size: 180%;
     color: ${props => props.theme.colors.text};
     font: 400 16px Heebo, sans-serif;
     font-size: 1.6rem;
